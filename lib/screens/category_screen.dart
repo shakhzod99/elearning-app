@@ -1,6 +1,6 @@
-import 'package:elearning/utils/const.dart';
-import 'package:elearning/widgets/card_courses.dart';
-import 'package:elearning/widgets/header_inner.dart';
+import 'package:algolearn/utils/const.dart';
+import 'package:algolearn/widgets/card_courses.dart';
+import 'package:algolearn/widgets/header_inner.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

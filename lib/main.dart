@@ -1,5 +1,5 @@
-import 'package:elearning/screens/home_screen.dart';
-import 'package:elearning/utils/const.dart';
+import 'package:algolearn/screens/home_screen.dart';
+import 'package:algolearn/utils/const.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

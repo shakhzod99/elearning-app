@@ -1,5 +1,4 @@
-import 'package:elearning/utils/const.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:algolearn/utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 

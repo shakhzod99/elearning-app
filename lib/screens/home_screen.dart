@@ -1,10 +1,8 @@
-import 'package:elearning/screens/category_screen.dart';
-import 'package:elearning/utils/const.dart';
-import 'package:elearning/widgets/card_courses.dart';
-import 'package:elearning/widgets/header.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:algolearn/screens/category_screen.dart';
+import 'package:algolearn/utils/const.dart';
+import 'package:algolearn/widgets/card_courses.dart';
+import 'package:algolearn/widgets/header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 
 class HomeScreen extends StatefulWidget {
