@@ -5,33 +5,33 @@ class Constants {
   static String appName = "e-Learning";
 
   // Material Design Color
-  static Color lightPrimary = Color(0xfffcfcff);
-  static Color lightAccent = Color(0xFFF18C8E);
-  static Color lightBackground = Color(0xfffcfcff);
+  static Color lightPrimary = const Color(0xfffcfcff);
+  static Color lightAccent = const Color(0xFFF18C8E);
+  static Color lightBackground = const Color(0xfffcfcff);
 
-  static Color grey = Color(0xff707070);
-  static Color textPrimary = Color(0xFF486581);
-  static Color textDark = Color(0xFF305F72);
+  static Color grey = const Color(0xff707070);
+  static Color textPrimary = const Color(0xFF486581);
+  static Color textDark = const Color(0xFF305F72);
 
   // Salmon
-  static Color salmonMain = Color(0xFFF18C8E);
-  static Color salmonDark = Color(0xFFBB7F87);
-  static Color salmonLight = Color(0xFFF19895);
+  static Color salmonMain = const Color(0xFFF18C8E);
+  static Color salmonDark = const Color(0xFFBB7F87);
+  static Color salmonLight = const Color(0xFFF19895);
 
   // Blue
 
-  static Color blueMain = Color(0xFF579ACA);
-  static Color blueDark = Color(0xFF4E92B1);
-  static Color blueLight = Color(0xFF5AA6C8);
+  static Color blueMain = const Color(0xFF579ACA);
+  static Color blueDark = const Color(0xFF4E92B1);
+  static Color blueLight = const Color(0xFF5AA6C8);
 
   // Pink
-  static Color lightPink = Color(0xFFFAE4F4);
+  static Color lightPink = const Color(0xFFFAE4F4);
 
   // Yellow
-  static Color lightYellow = Color(0xFFFFF5E5);
+  static Color lightYellow = const Color(0xFFFFF5E5);
 
   // Violet
-  static Color lightViolet = Color(0xFFFBF5FF);
+  static Color lightViolet = const Color(0xFFFBF5FF);
 
   static ThemeData lighTheme(BuildContext context) {
     return ThemeData(
@@ -40,9 +40,7 @@ class Constants {
       accentColor: lightAccent,
       cursorColor: lightAccent,
       scaffoldBackgroundColor: lightBackground,
-
       appBarTheme: AppBarTheme(
-
         iconTheme: IconThemeData(
           color: lightAccent,
         ),
