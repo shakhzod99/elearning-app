@@ -1,6 +1,7 @@
-import 'package:elearning/utils/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
+
+import '../utils/const.dart';
 
 class HeaderInner extends StatelessWidget {
 

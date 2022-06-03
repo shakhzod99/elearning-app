@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Constants {
   // Name
@@ -41,9 +40,9 @@ class Constants {
       accentColor: lightAccent,
       cursorColor: lightAccent,
       scaffoldBackgroundColor: lightBackground,
-      textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme),
+
       appBarTheme: AppBarTheme(
-        textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme),
+
         iconTheme: IconThemeData(
           color: lightAccent,
         ),
