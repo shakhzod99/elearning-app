@@ -1,6 +1,7 @@
 # E-Learning Online Courses App
 
-Algolearn application
+Algolearn application 
+Tashpulatov Shohrux
 
 ## Screenshots
 
