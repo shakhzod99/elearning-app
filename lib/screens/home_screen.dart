@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   final TextEditingController _searchControl = new TextEditingController();
-  FocusNode myFocusNode;
+  FocusNode? myFocusNode;
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _searchControl.dispose();
-    myFocusNode.dispose();
+    myFocusNode?.dispose();
     super.dispose();
   }
 

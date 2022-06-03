@@ -10,22 +10,22 @@ class CardCourses extends StatelessWidget {
   final double percentage;
   final Color color;
 
-  CardCourses({
-    Key key,
-    @required this.image,
-    @required this.title,
-    @required this.hours,
-    @required this.percentage,
-    @required this.progress,
-    @required this.color,
+  const CardCourses({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.hours,
+    required this.percentage,
+    required this.progress,
+    required this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(30.0),
-      margin: EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(30.0),
+      margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
         color: color,
@@ -33,7 +33,7 @@ class CardCourses extends StatelessWidget {
       child: Row(
         children: <Widget>[
           image,
-          SizedBox(width: 20.0),
+          const SizedBox(width: 20.0),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,9 +46,9 @@ class CardCourses extends StatelessWidget {
                       color: Constants.textDark
                   ),
                 ),
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 Text(hours,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                     color: Color(0xFFF18C8E),
@@ -57,7 +57,7 @@ class CardCourses extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           Row(
             children: <Widget>[
               Text(progress,
@@ -67,9 +67,9 @@ class CardCourses extends StatelessWidget {
                   color: Constants.textDark,
                 ),
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle
                 ),
@@ -79,9 +79,9 @@ class CardCourses extends StatelessWidget {
                   lineWidth: 2.0,
                   animation: true,
                   percent: percentage,
-                  center: Icon(Icons.play_arrow, color: Color(0xFFF18C8E)),
+                  center: const Icon(Icons.play_arrow, color: Color(0xFFF18C8E)),
                   circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: Color(0xFFF18C8E),
+                  progressColor: const Color(0xFFF18C8E),
                 ),
               )
 
