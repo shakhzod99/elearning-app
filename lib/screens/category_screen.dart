@@ -1,16 +1,23 @@
+import 'package:algolearn/data/data.dart';
+import 'package:algolearn/screens/article_screen.dart';
 import 'package:algolearn/utils/const.dart';
 import 'package:algolearn/widgets/card_courses.dart';
 import 'package:algolearn/widgets/header_inner.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+  const CategoryScreen({Key? key, required this.category}) : super(key: key);
+
+  final MapEntry<Category, List<Article>> category;
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
+  late final category = widget.category.key;
+  late final articles = widget.category.value;
+
   @override
   void initState() {
     super.initState();
@@ -37,35 +44,19 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     vertical: Constants.mainPadding),
                 height: 44,
                 width: 44,
-                child: FlatButton(
-                  padding: const EdgeInsets.all(0),
-                  color: Colors.white.withOpacity(0.3),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(0),
+                    primary: Colors.white.withOpacity(0.3),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                   child:
                       const Icon(Icons.keyboard_backspace, color: Colors.white),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(
-                    horizontal: Constants.mainPadding,
-                    vertical: Constants.mainPadding),
-                height: 44,
-                width: 44,
-                child: FlatButton(
-                  padding: const EdgeInsets.all(0),
-                  color: Colors.white.withOpacity(0.3),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  onPressed: () {
-                    debugPrint("Menu Pressed");
-                  },
-                  child: const Icon(Icons.menu, color: Colors.white),
                 ),
               ),
             ],
@@ -76,13 +67,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: <Widget>[
           const HeaderInner(),
           ListView(
+            physics: const BouncingScrollPhysics(),
             children: <Widget>[
               SizedBox(height: Constants.mainPadding * 3),
-              const Center(
+              Center(
                 child: Text(
-                  "UI/UX\nCourses",
+                  widget.category.key.title,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 34,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
@@ -91,6 +83,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
               SizedBox(height: Constants.mainPadding * 2),
               Container(
+                height: MediaQuery.of(context).size.height -
+                    Constants.mainPadding * 10,
                 padding: EdgeInsets.fromLTRB(
                     Constants.mainPadding,
                     Constants.mainPadding * 2,
@@ -101,39 +95,28 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       BorderRadius.vertical(top: Radius.circular(50.0)),
                   color: Colors.white,
                 ),
-                child: ListView(
+                child: ListView.builder(
                   scrollDirection: Axis.vertical,
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  children: <Widget>[
-                    CardCourses(
-                      image: Image.asset("assets/images/icon_1.png",
-                          width: 40, height: 40),
-                      color: Constants.lightPink,
-                      title: "Adobe XD Prototyping",
-                      hours: "10 hours, 19 lessons",
-                      progress: "25%",
-                      percentage: 0.25,
-                    ),
-                    CardCourses(
-                      image: Image.asset("assets/images/icon_2.png",
-                          width: 40, height: 40),
-                      color: Constants.lightYellow,
-                      title: "Sketch shortcuts and tricks",
-                      hours: "10 hours, 19 lessons",
-                      progress: "50%",
-                      percentage: 0.5,
-                    ),
-                    CardCourses(
-                      image: Image.asset("assets/images/icon_3.png",
-                          width: 40, height: 40),
-                      color: Constants.lightViolet,
-                      title: "UI Motion Design in After Effects",
-                      hours: "10 hours, 19 lessons",
-                      progress: "75%",
-                      percentage: 0.75,
-                    ),
-                  ],
+                  itemCount: articles.length,
+                  itemBuilder: (context, index) {
+                    final item = articles[index];
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ArticleScreen(item: item)),
+                        );
+                      },
+                      child: CardCourses(
+                        image: Icon(category.icon),
+                        color: category.color,
+                        title: item.title,
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'E-Learning Online Courses App',
       debugShowCheckedModeBanner: false,
       theme: Constants.lighTheme(context),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

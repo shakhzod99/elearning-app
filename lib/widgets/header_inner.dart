@@ -14,7 +14,6 @@ class HeaderInner extends StatelessWidget {
           flex: 1,
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.vertical(bottom: Radius.circular(50.0)),
               color: Constants.blueLight,
             ),
             child: Stack(
@@ -39,10 +38,6 @@ class HeaderInner extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-            flex: 1,
-            child: Container()
-        )
       ],
     );
   }
